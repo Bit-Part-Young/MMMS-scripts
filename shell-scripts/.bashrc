@@ -35,8 +35,8 @@ fi
 # alias
 ######################################################################
 
-alias ll='ls -alF'
-alias la='ls -A'
+alias ll='ls -lF'
+alias la='ls -AF'
 alias l='ls -CF'
 
 if which lsd >/dev/null 2>&1; then
