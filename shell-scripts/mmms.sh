@@ -39,16 +39,21 @@ repo_url=https://gitee.com/sjtu_konglt/MMMS.git
 parent_path=$HOME/MSE6701H
 
 if [ -x "$(command -v git)" ]; then
-    mkdir ${parent_path}
 
-    cd ${parent_path}
+    if [ ! -d ${parent_path} ]; then
+        mkdir ${parent_path}
 
-    echo -e "MMMS course materials is starting to download...\n"
-    git clone $repo_url
+        cd ${parent_path}
 
-    echo -e "\nMMMS course materials has been downloaded to ${parent_path}.\n"
+        echo -e "MMMS course materials is starting to download...\n"
+        git clone $repo_url
 
-    cd - > /dev/null
+        echo -e "\nMMMS course materials has been downloaded to ${parent_path}.\n"
+
+        cd - > /dev/null
+    else
+        echo -e "MMMS course materials has been downloaded to ${parent_path}.\n"
+    fi
 
 else
     echo 'Error: git is not installed.' >&2
