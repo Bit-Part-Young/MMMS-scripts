@@ -10,7 +10,7 @@ if [ -f $HOME/${vim_file} ]; then
     cp $HOME/${vim_file}{,.bak}
 fi
 
-wget -O https://gitee.com/yangsl306/MMMS-scripts/blob/main/shell-scripts/${vim_file} $HOME/${vim_file}
+wget https://gitee.com/yangsl306/MMMS-scripts/blob/main/shell-scripts/${vim_file} -O $HOME/${vim_file}
 
 echo -e "\nVim configuration has been downloaded to $HOME/${vim_file}.\n"
 
@@ -23,7 +23,7 @@ if [ -f $HOME/${bashrc_file} ]; then
     cp $HOME/${bashrc_file}{,.bak}
 fi
 
-wget -O https://gitee.com/yangsl306/MMMS-scripts/blob/main/shell-scripts/${bashrc_file} $HOME/${bashrc_file}
+wget https://gitee.com/yangsl306/MMMS-scripts/blob/main/shell-scripts/${bashrc_file} -O $HOME/${bashrc_file}
 
 echo -e "\nBash configuration has been downloaded to $HOME/${bashrc_file}.\n"
 
