@@ -10,7 +10,7 @@ if [ -x "$(command -v git)" ]; then
     cd ${parent_path}
 
     echo -e "MMMS course materials is starting to download...\n"
-    git clone $repo_url ${parent_path}
+    git clone $repo_url .
 
     echo -e "\nMMMS course materials has been downloaded to ${parent_path}.\n"
 
