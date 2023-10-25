@@ -38,7 +38,7 @@ def cal_force_energy_lj(
     distance: float, epsilon: float = EPSILON, sigma: float = SIGMA
 ) -> tuple[float, float]:
     """
-    计算LJ势函数下的两个原子之间的能量和力
+    计算 LJ 势函数下的两个原子之间的能量和力
     """
 
     pot_energy_ij = (
@@ -105,7 +105,7 @@ def velocity_verlet(
     return [total_kin_energy, total_pot_energy, total_energy]
 
 
-def save_xyz(types: list[str], pos: np.array, save_fn: str = "output.xyz"):
+def save_xyz(types: list[str], pos: np.array, save_fn: str = "output.xyz") -> None:
     """
     将原子位置等相关信息保存为 xyz 格式文件，可用 ovito 软件可视化，查看构型演化
     """
