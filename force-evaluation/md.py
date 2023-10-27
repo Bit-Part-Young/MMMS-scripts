@@ -8,6 +8,7 @@
 
 import os
 from time import time
+from typing import List, Tuple
 
 import numpy as np
 import pandas as pd
@@ -36,7 +37,7 @@ def timer(func):
 
 def cal_force_energy_lj(
     distance: float, epsilon: float = EPSILON, sigma: float = SIGMA
-) -> tuple[float, float]:
+) -> Tuple[float]:
     """
     计算 LJ 势函数下的两个原子之间的能量和力
     """
@@ -61,7 +62,7 @@ def velocity_verlet(
     epsilon: float = EPSILON,
     sigma: float = SIGMA,
     dt: float = TIMESTEP,
-):
+) -> List[float]:
     """
     使用 Velocity Verlet 算法更新原子的位置、速度和加速度
     """
@@ -105,7 +106,7 @@ def velocity_verlet(
     return [total_kin_energy, total_pot_energy, total_energy]
 
 
-def save_xyz(types: list[str], pos: np.ndarray, save_fn: str = "output.xyz") -> None:
+def save_xyz(types: List[str], pos: np.ndarray, save_fn: str = "output.xyz") -> None:
     """
     将原子位置等相关信息保存为 xyz 格式文件，可用 ovito 软件可视化，查看构型演化
     """
@@ -127,7 +128,7 @@ def save_xyz(types: list[str], pos: np.ndarray, save_fn: str = "output.xyz") -> 
     f.close()
 
 
-def load_xyz(fn: str) -> tuple[list[str], np.ndarray]:
+def load_xyz(fn: str) -> Tuple[List[str], np.ndarray]:
     """导入 xyz 格式构型文件"""
 
     with open(fn, "r") as xyzfile:
