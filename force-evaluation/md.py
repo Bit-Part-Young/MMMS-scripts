@@ -54,9 +54,9 @@ def cal_force_energy_lj(
 
 
 def velocity_verlet(
-    pos: np.array,
-    vel: np.array,
-    accel: np.array,
+    pos: np.ndarray,
+    vel: np.ndarray,
+    accel: np.ndarray,
     mass: float = ATOMIC_MASS,
     epsilon: float = EPSILON,
     sigma: float = SIGMA,
@@ -105,7 +105,7 @@ def velocity_verlet(
     return [total_kin_energy, total_pot_energy, total_energy]
 
 
-def save_xyz(types: list[str], pos: np.array, save_fn: str = "output.xyz") -> None:
+def save_xyz(types: list[str], pos: np.ndarray, save_fn: str = "output.xyz") -> None:
     """
     将原子位置等相关信息保存为 xyz 格式文件，可用 ovito 软件可视化，查看构型演化
     """
@@ -127,7 +127,7 @@ def save_xyz(types: list[str], pos: np.array, save_fn: str = "output.xyz") -> No
     f.close()
 
 
-def load_xyz(fn: str) -> tuple[list[str], np.array]:
+def load_xyz(fn: str) -> tuple[list[str], np.ndarray]:
     """导入 xyz 格式构型文件"""
 
     with open(fn, "r") as xyzfile:
