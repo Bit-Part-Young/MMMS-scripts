@@ -1,8 +1,9 @@
 #!/bin/bash
 
 
-# 配置~/.vimrc
-echo -e "Vim configuration is starting to download...\n"
+# 配置 ~/.vimrc
+#-------------------------------------------------------------------------------
+echo -e "Vim config file is starting to download...\n"
 
 vim_file=$HOME/.vimrc
 file_url=https://gitee.com/yangsl306/MMMS-scripts/raw/main/shell-scripts
@@ -12,11 +13,13 @@ fi
 
 wget ${file_url}/$(basename ${vim_file}) -O ${vim_file}
 
-echo -e "\nVim configuration has been downloaded to ${vim_file}.\n"
+echo -e "\nVim config file has been downloaded to ${vim_file}.\n"
+#-------------------------------------------------------------------------------
 
 
-# 配置~/.bashrc
-echo -e "Bash configuration is starting to download...\n"
+# 配置 ~/.bashrc
+#-------------------------------------------------------------------------------
+echo -e "Bash config file is starting to download...\n"
 
 bashrc_file=$HOME/.bashrc
 if [ -f ${bashrc_file} ]; then
@@ -25,7 +28,23 @@ fi
 
 wget ${file_url}/$(basename ${bashrc_file}) -O ${bashrc_file}
 
-echo -e "\nBash configuration has been downloaded to ${bashrc_file}.\n"
+echo -e "\nBash config file has been downloaded to ${bashrc_file}.\n"
+#-------------------------------------------------------------------------------
+
+
+# 配置 ~/.inputrc
+#-------------------------------------------------------------------------------
+echo -e "Readline config file is starting to download...\n"
+
+inputrc_file=$HOME/.inputrc
+if [ -f ${inputrc_file} ]; then
+    cp ${inputrc_file}{,.bak}
+fi
+
+wget ${file_url}/$(basename ${inputrc_file}) -O ${inputrc_file}
+
+echo -e "\nReadline config file has been downloaded to ${inputrc_file}.\n"
+#-------------------------------------------------------------------------------
 
 
 # 创建 ~/bin 目录
@@ -34,7 +53,8 @@ if [ ! -d $HOME/bin ]; then
 fi
 
 
-# 检查是否安装git以安装MMMS课程上机实验材料
+# 检查是否安装 git 以安装 MMMS 课程上机实验材料
+#-------------------------------------------------------------------------------
 repo_url=https://gitee.com/sjtu_konglt/MMMS.git
 parent_path=$HOME/MSE6701H
 
