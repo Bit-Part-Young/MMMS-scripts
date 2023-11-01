@@ -43,9 +43,12 @@ if which lsd >/dev/null 2>&1; then
   alias ls='lsd'
 fi
 
-alias bk="cd ..; ls"
+alias LS="ls"
 alias dc="cd"
+alias bk="cd ..; ls"
 alias ..="cd ../..; ls"
+
+# slurm related
 alias clo="rm -rf *.out *.err"
 alias q="squeue"
 
