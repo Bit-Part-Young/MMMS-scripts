@@ -47,6 +47,7 @@ alias bk="cd ..; ls"
 alias dc="cd"
 alias ..="cd ../..; ls"
 alias clo="rm -rf *.out *.err"
+alias q="squeue"
 
 ######################################################################
 
