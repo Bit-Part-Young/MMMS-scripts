@@ -14,6 +14,7 @@ fi
 wget ${file_url}/$(basename ${vim_file}) -O ${vim_file}
 
 echo -e "\nVim config file has been downloaded to ${vim_file}.\n"
+echo -e "\n#-------------------------------------------------------------------------------#\n\n"
 #-------------------------------------------------------------------------------
 
 
@@ -29,6 +30,7 @@ fi
 wget ${file_url}/$(basename ${bashrc_file}) -O ${bashrc_file}
 
 echo -e "\nBash config file has been downloaded to ${bashrc_file}.\n"
+echo -e "\n#-------------------------------------------------------------------------------#\n\n"
 #-------------------------------------------------------------------------------
 
 
@@ -44,6 +46,7 @@ fi
 wget ${file_url}/$(basename ${inputrc_file}) -O ${inputrc_file}
 
 echo -e "\nReadline config file has been downloaded to ${inputrc_file}.\n"
+echo -e "\n#-------------------------------------------------------------------------------#\n\n"
 #-------------------------------------------------------------------------------
 
 
@@ -73,6 +76,8 @@ else
     echo 'Error: git is not installed.' >&2
     exit 1
 fi
+
+echo -e "\n#-------------------------------------------------------------------------------#\n\n"
 #-------------------------------------------------------------------------------
 
 
@@ -93,4 +98,5 @@ cp ${dft_tools_path}/vaspkit ${bin_path}
 cp ${dft_tools_path}/vasp_std ${bin_path}
 
 echo -e "\nMD & DFT related binary files have been copied to ~/bin path...\n"
+echo -e "\n#-------------------------------------------------------------------------------#\n\n"
 #-------------------------------------------------------------------------------
