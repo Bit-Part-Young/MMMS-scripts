@@ -39,12 +39,8 @@ alias ll='ls -hlF'
 alias la='ls -hlAF'
 alias l='ls -CF'
 
-if which lsd >/dev/null 2>&1; then
-  alias ls='lsd'
-fi
 
 alias LS="ls"
-alias dc="cd"
 alias bk="cd ..; ls"
 alias ..="cd ../..; ls"
 
@@ -59,7 +55,10 @@ alias q="squeue"
 # PATH
 ######################################################################
 
-export PATH=$HOME/bin:$PATH
+export PATH=$PATH:$HOME/bin
+# 课程材料用 DFT MD 部分可执行程序 如 vasp_std vaspkit atomsk eos_fit 等
+export PATH=$PATH:$HOME/MSE6701H/MMMS/2-MolecularDynamics/0-tools
+export PATH=$PATH:$HOME/MSE6701H/MMMS/3-DFT/0-tools
 
 
 ######################################################################

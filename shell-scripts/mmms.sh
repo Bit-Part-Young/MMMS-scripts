@@ -81,6 +81,7 @@ echo -e "\n#--------------------------------------------------------------------
 #-------------------------------------------------------------------------------
 
 
+: '
 # 创建 ~/bin 目录； 拷贝 atomsk vasp_std vaspkit 可执行程序到 ~/bin 目录
 echo -e "MD & DFT related binary files are starting to copy to ~/bin path...\n"
 
@@ -100,3 +101,4 @@ cp ${dft_tools_path}/vasp_std ${bin_path}
 echo -e "\nMD & DFT related binary files have been copied to ~/bin path...\n"
 echo -e "\n#-------------------------------------------------------------------------------#\n\n"
 #-------------------------------------------------------------------------------
+'
